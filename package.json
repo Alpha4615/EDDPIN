@@ -1,0 +1,23 @@
+{
+    "name": "EDDPIN",
+    "description": "A event-driven development platform for IRC network administrators",
+    "version": "0.1.0",
+    "keywords": [
+        "irc",
+        "ircd"
+    ],
+    "dependencies": {
+    },
+    "repository": [
+        {
+            "type": "git",
+            "url": "https://github.com/LightningCoders/EDDPIN.git"
+        }
+    ],
+    "licenses": [
+        {
+            "name": "GPLv2",
+            "url": "http://choosealicense.com/licenses/gpl-v2/"
+        }
+    ]
+}
