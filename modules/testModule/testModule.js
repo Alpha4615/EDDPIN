@@ -1,37 +1,41 @@
-var mod = {
+var modBaseObject = require('../../lib/classes/moduleObject.js');
+util = require('util');
 
-    biography: {
-        title: 'Test module',
-        description: 'A module written for testing',
-        author: 'Jonathan Knippschild',
-        version: '1.0'
-    },
-    core: '',
-    events: {
-        'kick': 'onKick',
-        'join': 'onJoin',
-        'newUser': 'onNewUser',
-        'part': 'onPart',
-        'userModeChange': 'onUserModeChange'
-    },
+function testModule() {
+    modBaseObject.apply(this, arguments);
 
+}
 
-    onLoad: function (core) {
-        this.core = core;
-    },
+util.inherits(testModule, modBaseObject);
 
-    onKick: function (event) {
-    },
-    onJoin: function (event) {
-    },
-    onPart: function (event) {
-    },
-    onNewUser: function (event) {
-    },
-    onUserModeChange: function (event) {
-    }
+testModule.prototype.biography = {
+    title: 'Test module',
+    description: 'A module written for testing',
+    author: 'Joe Shmoe',
+    version: '1.0'
+};
+
+testModule.prototype.events  = {'kick': 'onKick',
+    'join': 'onJoin',
+    'newUser': 'onNewUser',
+    'part': 'onPart',
+    'userModeChange': 'onUserModeChange',
+    'EndOfBurst': 'endBurst'};
+
+testModule.prototype.onLoad = function() {
 
 };
 
+testModule.prototype.onJoin = function(event) {
+};
 
-module.exports = mod;
+testModule.prototype.onNewUser = function(event) {
+};
+
+testModule.prototype.onKick = function(event) {
+};
+
+testModule.prototype.onEndBurst = function(event) {
+};
+
+module.exports = testModule;
