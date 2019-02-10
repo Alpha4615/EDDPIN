@@ -1,10 +1,10 @@
 {"uplink": {
-    "server": "thermalninja.com",
+    "server": "your.irc.server",
     "port": 6660,
-    "password": "passwd"
+    "password": "linkpasswd"
 },
     "me": {
-        "serverName": "ninja.thermalninja.com",
+        "serverName": "EDDPIN.your.irc.server",
         "numeric": "AT",
         "description": "IRC Development Platform"
     }
