@@ -5,7 +5,7 @@
 },
     "me": {
         "serverName": "EDDPIN.your.irc.server",
-        "numeric": "AT",
+        "numeric": 2,
         "description": "IRC Development Platform"
     }
 }
