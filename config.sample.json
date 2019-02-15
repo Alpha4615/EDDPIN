@@ -1,11 +1,18 @@
-{"uplink": {
+{
+  "uplink": {
     "server": "your.irc.server",
     "port": 6660,
     "password": "linkpasswd"
-},
-    "me": {
-        "serverName": "EDDPIN.your.irc.server",
-        "numeric": 2,
-        "description": "IRC Development Platform"
-    }
+  },
+  "me": {
+    "serverName": "EDDPIN.your.irc.server",
+    "numeric": 2,
+    "description": "IRC Development Platform"
+  },
+  "modules": {
+    "appInit": [],
+    "uponUplinkConnection": [],
+    "uponUplinkConnection_Registration": [],
+    "uponUplinkBurst": []
+  }
 }
