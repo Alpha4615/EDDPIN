@@ -68,14 +68,14 @@ yourModule.prototype.onLoad = function () {
     var options = {
         selfish: true,
         pretest: function (event) {
-            if (event.actor.nickname == "Jonathan") {
+            if (event.actor.isOper()) {
                 return true;
             }
         }
     };
     
     var callback = function (eventObj) {
-                           eventObj.victim.privmsg(eventObj.actor, "Hey everyone! " + eventObj.actor.nickname " is an IRCop.");
+                           eventObj.victim.privmsg(eventObj.channel, "Hey everyone! " + eventObj.actor.nickname " is an IRCop.");
     };
                    
     this.subscribeToEvent("channelJoin", callback, options);
