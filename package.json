@@ -1,12 +1,14 @@
 {
     "name": "EDDPIN",
     "description": "A event-driven development platform for IRC network administrators",
-    "version": "0.1.0",
+  "version": "0.2.0",
+  "license": "GPL-2.0-only",
     "keywords": [
         "irc",
         "ircd"
     ],
     "dependencies": {
+      "colors": "1.3.3"
     },
     "repository": [
         {

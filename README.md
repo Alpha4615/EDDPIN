@@ -8,6 +8,16 @@ This application enables IRC network administrators to deploy modules that respo
 
 Without modules installed, EDDPIN will not do anything useful. It will monitor the network for events and trigger events that are not being listened to.
 
+## Installation
+To install EDDPIN:
+
+* Open config.sample.json and change the values to what is appropriate for your use.
+* In console, CD into the root directory of the package and type 'npm install' this will install any dependencies from node package manager.
+* Run the application by typing 'node server.js'
+
+## Dependencies
+This package requires nodeJS, Node Package Manager, and [colors.js](https://www.npmjs.com/package/colors).
+
 ## Modules
 
 It is simple to write a module. Check out modules/testModule/testModule.js to examine the syntax expected.
