@@ -101,17 +101,49 @@ The following events are a sample of what's available for binding:
 * **channelCreate** - A channel is being created by a user
 * **channelDestroyed** - A channel has been emptied
 * **channelJoin** - A channel is being joined by a user
+* **channelPart** - A channel is being parted by a user
 * **channelModeChange** - A mode change has been applied to a channel
 * **channelUserStatusChange** - A user has been given (or lost a status) 
+* **ctcpChannel_user** - A CTCP request from a user has been received targeted at a channel
+* **ctcpChannel_server** - See above, except the source is a server.
+* **ctcpUser_user** - A CTCP request from a user has been received targeted at a pseudo user
+* **ctcpUser_server** - See above, except the source is a server.
+* **ctcpReply** - A CTCP reply has been received.
 * **endOfBurst** - End of a new-server burst
+* **ipNowHIdden** - A user has had +x applied to their user mode
+* **ircAdminApplied** - A user has had +a applied to their user mode
 * **kick** - A user has been kicked from a channel
-* **messageUser** - A message has been sent to a pseudoUser managed by EDDPIN
-* **messageChannel** - A message has been sent to a channel that is occupied by a pseudoUser managed by EDDPIN
+* **message_user** - A message from a non-server is sent to any target (channel/pseudo user)
+* **message_server** - See above, except the source is a server.
+* **messageUser_user** - A message from a non-server has been sent to a pseudoUser managed by EDDPIN
+* **messageUser_server** - See above, except the source is a server.
+* **messageChannel_user** - A message has been sent to a channel that is occupied by a pseudoUser managed by EDDPIN
+* **messageChannel_server** - See above, except the source is a server.
+* **notice_user** - A notice from a non-server is sent to any target (channel/pseudo user)
+* **noticee_server** - See above, except the source is a server.
+* **noticeUser_user** - A notice from a non-server has been sent to a pseudoUser managed by EDDPIN
+* **noticeUser_server** - See above, except the source is a server.
+* **noticeChannel_user** - A notice has been sent to a channel that is occupied by a pseudoUser managed by EDDPIN
+* **noticeChannel_server** - See above, except the source is a server.
 * **uplinkConnected** - A successful connection has been made to the uplink
 * **uplinkDisconnected** - This event is called immediately before EDDPIN terminates after the uplink is disconnected
+* **userKilled** - A user has been killed from the server
 * **userModeChange** - A user has had a mode change applied
+* **userNicknameChange** - A user has changed their nickname
+* **operPrivilegeAssigned** - One or more PRIVs have been assigned to a user
 * **operUp** - a user has opered up
+* **ping** - A ping has been received from the uplink
+* **serverQuit** - A server has left the network
+* **SVSJoin** - A user has been forcefully joined to a channel.
+* **SVSNick** - A user has had a new nickname forced onto them.
+* **SVSPart** - A user has been forcefully parted from a channel.
+* **topicSet** - A topic has been set in a channel
 * **quit** - A user has disconnected from the network
+
+#### Message Visibility
+Please note that due to how P10 protocol is designed, An EDDPIN instance will only see notices and messages targeted directly at a pseudo-user or at a channel that contains a pseudo-user. It impossible to monitor message traffic between regular users and inside channels that do not have a pseudo-user present.
+
+Certain mods and patches for your P10 server could change this behavior.
 
 ### Event Object
 An instance of eventObject is passed with every event trigger. This contains information about the event which is represented by the following properties:
